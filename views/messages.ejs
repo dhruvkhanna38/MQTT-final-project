@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>MQTT DATA</title>
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    </head>
+    <body>
+        <div class="jumbotron" style="background-color: #58B19F">
+                <h1>MQTT Topic and Messages</h1>
+        </div>
+        <table class="table table-hover table-striped">
+            <tr>
+                <th>S.No</th>
+                <th>Topic</th>
+                <th>Message</th>
+                <th>Created</th>
+                <th>Client ID</th>
+            </tr>
+        
+
+        <%for(var i=0;i<foundData.length;i++){%>
+            <tr>
+                <td><%=i+1%></td>
+                <td><%=foundData[i].topic%></td>
+                <td><%=foundData[i].message%></td>
+                <td><%=foundData[i].created.toUTCString()%></td>
+                <td><%=foundData[i].clientId%></td>
+            </tr>
+        <%}%>
+        </table>
+    </body>
+</html>
